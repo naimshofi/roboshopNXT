@@ -47,18 +47,26 @@ public class ArmGripper {
 	}
 	
 	public void armUp(){
-		Motor.A.backward();
-		Motor.B.backward();
+		Motor.A.forward();
+		Motor.B.forward();
 	}
 	
 	public void armDown(){
-		Motor.A.forward();
-		Motor.B.forward();
+		Motor.A.backward();
+		Motor.B.backward();
 	}
 	
 	public void armStop(){
 		Motor.A.stop(true);
 		Motor.B.stop();
+	}
+	
+	public void armClose(){
+		servoGrip.setAngle(20);
+	}
+	
+	public void armOpen(){
+		servoGrip.setAngle(100);
 	}
 }
 

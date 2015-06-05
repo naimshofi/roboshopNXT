@@ -81,7 +81,7 @@ public class MotorTest {
 			if (transmitReceived == 9) {
 				command[8] = true;
 				LCD.clear();
-				LCD.drawString("Bukan Arm", 0, 0);
+				LCD.drawString("Buka Arm", 0, 0);
 			}// open arm
 
 			if (transmitReceived == 10) {
@@ -106,8 +106,6 @@ public class MotorTest {
 	}
 
 	public static void robotAction(boolean[] commandList) {
-		
-		/**
 		// Movement part
 		if (commandList[0] == true) {
 			mm.moveForward();
@@ -127,14 +125,20 @@ public class MotorTest {
 			ag.armUp();
 		} else if (commandList[5] == true) {
 			ag.armDown();
+		} else if (commandList[6] == true) {
+			ag.rotateRight();
+		} else if (commandList[7] == true) {
+			ag.rotateLeft();
+		} else if (commandList[8] == true) {
+			ag.armOpen();
+		} else if (commandList[9] == true) {
+			ag.armClose();
 		} else if (commandList[4] == false && commandList[5] == false
 				&& commandList[6] == false && commandList[6] == false
 				&& commandList[8] == false && commandList[9] == false) {
 			ag.armStop();
 			ag.stopRotate();
 		}
-		
-		*/
 	}
 
 	public static void main(String[] args) throws InterruptedException {
@@ -150,10 +154,10 @@ public class MotorTest {
 		mm = new MainMotor(cf);
 		ag = new ArmGripper(cf);
 		BTLink = Bluetooth.waitForConnection();
- 		dataIn = BTLink.openDataInputStream();
-		//USBLink = USB.waitForConnection();
+		dataIn = BTLink.openDataInputStream();
+		// USBLink = USB.waitForConnection();
 		// dataOut = USBLink.openDataOutputStream();
-		//dataIn = USBLink.openDataInputStream();
+		// dataIn = USBLink.openDataInputStream();
 
 	}// End connect
 }
