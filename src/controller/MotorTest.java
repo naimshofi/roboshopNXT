@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.InputStream;
-
 import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import lejos.nxt.SensorPort;
@@ -11,6 +10,18 @@ import lejos.nxt.addon.tetrix.TetrixControllerFactory;
 import lejos.nxt.comm.BTConnection;
 import lejos.nxt.comm.Bluetooth;
 import lejos.nxt.comm.USBConnection;
+
+/*
+ Muhammad Naim bin Mohmad Shofi
+ Universiti Putra Malaysia
+ naim_shofi@yahoo.com
+
+ This program is for Final Year Project for Bachelor of Computer Science and Information Technology.
+ The title of this project is RoboShop : Shopping Robot Assistant Using Lego Mindstorm and Tetrix.
+ It used J4K Library and LeJOS SDK.
+
+ In this class, the program get the Movement ID from Kinect and execute it to the motor movement.
+ */
 
 public class MotorTest {
 
